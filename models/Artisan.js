@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/sequelize'); // Assure-toi d'avoir une connexion Sequelize configurée
+const Sequelize = require('../config/sequelize'); // Assure-toi d'avoir une connexion Sequelize configurée
 
-const Artisan = sequelize.define('Artisan', {
+const Artisan = Sequelize.define('Artisan', {
     id_artisan: {
         type: DataTypes.INTEGER,
         primaryKey: true,
