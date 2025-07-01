@@ -1,0 +1,53 @@
+@import './mixin.scss';
+@import './fonts.scss';
+
+
+
+.container_not_found {
+    max-width: 95%;
+    min-height: 600px;
+    padding: 40px;
+
+    .container_logo404 {
+        display: flex;
+        justify-self: center;
+        margin: 40px;
+        width: 60px;
+        height: 60px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .text_404,
+    .title_404 {
+        display: block;
+        justify-self: center;
+        width: fit-content;
+        height: 100px;
+    }
+}
+
+
+a.btn {
+    @include btn_blue();
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    &:hover {
+        @include btn_hover_blue();
+        @include b_box_shadow();
+        @include c_white();
+    }
+
+    .text_btn {
+        @include c_white();
+        display: block;
+    }
+}

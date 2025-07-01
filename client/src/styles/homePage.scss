@@ -1,0 +1,24 @@
+@import './mixin.scss';
+@import './fonts.scss';
+
+.body_home {
+    width: 100%;
+    margin: 50px 0;
+    padding: 50px 0;
+
+
+
+
+    ul {
+        list-style-type: decimal; // chiffres
+        list-style-position: inside; // pour ramener les chiffres dans la zone visible
+        width: fit-content;
+        padding: 0;
+        margin: 0 auto;
+
+        li {
+            width: fit-content;
+            text-align: left;
+        }
+    }
+}

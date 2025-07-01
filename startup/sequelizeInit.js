@@ -4,7 +4,6 @@
 // Ce script est utilisé pour synchroniser les modèles Sequelize avec la base de données MySQL
 
 const sequelize = require('../config/sequelize');
-const Produit = require('../models/Produit');
 
 (async () => {
   try {

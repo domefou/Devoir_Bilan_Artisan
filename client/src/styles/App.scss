@@ -1,0 +1,78 @@
+@import './mixin.scss';
+@import './fonts.scss';
+
+$white: #f1f8fc;
+
+p,
+li {
+  @include paragraph-style();
+}
+
+h1,
+h2 {
+  @include title-style();
+}
+
+h3 {
+  @include title-style($color: $white)
+}
+
+.BodyContainer {
+  @include bg_blue;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+header {
+  @include bg_white();
+  height: fit-content;
+}
+
+main {
+  @include bg_white();
+  max-width: 90%;
+  margin: auto;
+}
+
+
+
+
+
+.categorie_container {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  width: 100% !important;
+  @include b_box_shadow();
+}
+
+.container-fluid.home_container {
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 50px !important;
+  padding-top: 50px !important;
+  margin: 25px 0 !important;
+  display: flex !important;
+  justify-items: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  @include b_box_shadow();
+
+  &h1 {
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  main {
+    @include bg_white();
+    max-width: 100%;
+    margin: auto;
+  }
+}

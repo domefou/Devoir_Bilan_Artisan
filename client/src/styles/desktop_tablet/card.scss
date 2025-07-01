@@ -1,0 +1,80 @@
+@import '../mixin.scss';
+@import '../fonts.scss';
+
+
+
+@media (min-width: 768px) {
+
+
+
+
+
+    .row.card_container {
+        display: flex !important;
+        gap: 10px !important;
+        width: fit-content !important;
+        margin: 25px 0 !important;
+    }
+
+    .col.card {
+        width: 320px !important;
+        border-radius: 3px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+
+        &:hover {
+            @include bg_dark-grey();
+        }
+    }
+
+    .card_main {
+        width: 100% !important;
+        margin-top: 0 !important;
+        transition: background-color 0.2s ease;
+        z-index: 1 !important; // ✅ Assure que la carte est au-dessus des autres éléments
+
+
+    }
+
+    .card-body {
+
+        @include bg_white();
+    }
+
+
+    .card-body:hover {
+        @include bg_green();
+        @include b_box_shadow();
+        cursor: pointer;
+    }
+
+    .card-text {
+        border-radius: 0 !important;
+    }
+
+    .card-body:hover .card-text,
+    .card-body:hover .propos {
+        @include c_white();
+    }
+
+    .emailNone {
+        @include c_blue();
+
+        &:hover {
+            @include c_dark-blue();
+
+            &:active {
+                @include c_red();
+            }
+        }
+    }
+
+    .web>a {
+        @include c_blue();
+
+        &:hover {
+            @include c_dark-blue();
+        }
+    }
+
+}

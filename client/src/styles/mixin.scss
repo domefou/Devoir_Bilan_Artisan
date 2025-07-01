@@ -1,0 +1,182 @@
+// paragraphe
+@import './fonts.scss';
+
+
+
+
+
+@mixin paragraph-style($size: 1rem, $font-family: 'Graphik', $weight: 400, $color: black, $align: center, $margin: 0) {
+    font-size: $size !important;
+    font-family: $font-family !important;
+    font-weight: $weight !important;
+    color: $color !important;
+    text-align: $align !important;
+    margin: $margin !important;
+}
+
+
+//titre
+@mixin title-style($font-family: 'Graphik', $color: #0049c7, $align: center) {
+    font-family: $font-family !important;
+    color: $color !important;
+    text-align: $align !important;
+}
+
+@mixin footer-link($size: 0.8rem, $font-family: 'Graphik', $weight: 400, $color: #f1f8fc, $align: center) {
+    font-size: $size !important;
+    font-family: $font-family !important;
+    font-weight: $weight !important;
+    color: $color !important;
+    text-align: $align !important;
+}
+
+
+
+
+//lien externe
+
+@mixin out_link($color: #82b864, $fontStyle: italic) {
+    color: $color;
+    font-style: $fontStyle;
+}
+
+
+
+//color
+@mixin c_white($white: #f1f8fc) {
+    color: $white !important;
+}
+
+@mixin c_blue($blue: #0074c7) {
+    color: $blue !important;
+}
+
+@mixin c_dark-blue($dark-blue: #0049c7) {
+    color: $dark-blue !important;
+}
+
+@mixin c_dark-grey($grey: #384050) {
+    color: $grey !important;
+}
+
+@mixin c_red($red: #cd2c2e) {
+    color: $red !important;
+}
+
+@mixin c_green($green: #82b864) {
+    color: $green !important;
+}
+
+//background-color
+@mixin bg_white($bg_white: #f1f8fc) {
+    background-color: $bg_white !important;
+}
+
+@mixin bg_blue($bg_blue: #0074c7) {
+    background-color: $bg_blue !important;
+}
+
+@mixin bg_dark-blue($bg_dark-blue: #0049c7) {
+    background-color: $bg_dark-blue !important;
+}
+
+@mixin bg_dark-grey($bg_grey: #384050) {
+    background-color: $bg_grey !important;
+}
+
+@mixin bg_red($bg_red: #cd2c2e) {
+    background-color: $bg_red !important;
+}
+
+@mixin bg_green($bg_green: #82b864) {
+    background-color: $bg_green !important;
+}
+
+
+
+//lien artisan /hover / active
+@mixin hover-bg_green($hover-bg_green: #81b864e0) {
+    background-color: $hover-bg_green !important;
+}
+
+@mixin active-bg_green($hover-bg_green: #81b864e0, $textDecoration: underline) {
+    background-color: $hover-bg_green !important;
+    text-decoration: $textDecoration !important;
+}
+
+
+
+//lien standart /hover 
+@mixin hover-bg_blue($hover-bg_blue: #0074c7e0) {
+    background-color: $hover-bg_blue !important;
+
+}
+
+@mixin active-bg_blue($hover-bg_blue: #0074c7e0, $textDecoration: underline) {
+    background-color: $hover-bg_blue !important;
+    text-decoration: $textDecoration !important;
+
+}
+
+
+
+//onglet ASPECT general
+@mixin onglet_stdr($width: 100%, $min-width: 130px,
+    $height: 40px) {
+    width: $width !important;
+    min-width: $min-width !important;
+    height: $height !important;
+}
+
+
+//personnalisation detail
+@mixin b_bottom($borderBottom: solid 1px #cd2c2e) {
+    border-bottom: $borderBottom !important;
+}
+
+@mixin b_bottom_blue($borderBottom: solid 1px #0074c7) {
+    border-bottom: $borderBottom !important;
+}
+
+@mixin b_bottom_green($borderBottom: solid 1px #82b864) {
+    border-bottom: $borderBottom !important;
+}
+
+@mixin b_box_shadow($box_shadow: 1px 3px 4px 0 #384050) {
+    box-shadow: $box_shadow !important;
+
+}
+
+@mixin border_card($border: solid 1px #384050, $radius: 8px) {
+    border: $border !important;
+    border-radius: $radius !important;
+}
+
+
+//card 
+
+@mixin bg_card_blue($bg_blue: #4f90be) {
+    background-color: $bg_blue !important;
+}
+
+@mixin hover_card_blue($bg_blue: #4f90bec8) {
+    background-color: $bg_blue !important;
+}
+
+//bouton
+
+@mixin btn_blue($width: 160px, $height: 50px, $bg_blue: #0074c7, $color: #f1f8fc, $textAlign: center) {
+    width: $width !important;
+    height: $height !important;
+    background-color: $bg_blue !important;
+    color: $color !important;
+    text-align: $textAlign !important;
+}
+
+@mixin btn_hover_blue($width: 160px, $height: 50px, $bg_blue: #0049c7, $color: #f1f8fc, $textAlign: center) {
+    width: $width !important;
+    height: $height !important;
+    background-color: $bg_blue !important;
+    color: $color !important;
+    text-align: $textAlign !important;
+}

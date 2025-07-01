@@ -1,0 +1,26 @@
+@import '../mixin.scss';
+@import '../fonts.scss';
+
+
+
+.container-fluid.search_container {
+    @include bg_white();
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    justify-self: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-height: 60px !important;
+    height: fit-content !important;
+    padding: 0 !important;
+}
+
+.search_form.d-flex {
+    height: 40px !important;
+    width: 90% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}

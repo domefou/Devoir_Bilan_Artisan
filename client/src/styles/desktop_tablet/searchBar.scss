@@ -1,0 +1,36 @@
+@import '../mixin.scss';
+@import '../fonts.scss';
+
+
+
+
+@media (min-width: 768px) {
+    .container-fluid.search_container {
+        @include bg_white();
+        display: flex !important;
+        justify-content: center !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-right: auto;
+        min-height: 60px !important;
+        height: fit-content !important;
+        padding: 0 !important;
+    }
+
+    .search_form.d-flex {
+        min-width: 530px !important;
+        width: 60% !important;
+        height: 40px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    form>.btn {
+        @include btn_blue($height: 40px);
+
+        &:hover {
+            @include btn_hover_blue($height: 40px);
+            @include b_box_shadow();
+        }
+    }
+}

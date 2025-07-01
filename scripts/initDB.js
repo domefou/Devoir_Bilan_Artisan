@@ -13,12 +13,12 @@ require('dotenv').config(); // si tu utilises un fichier .env
       host: process.env.DB_HOST || 'localhost',
       user: process.env.DB_USER || 'root',
       password: process.env.DB_PASSWORD || '',
-      database: process.env.DB_NAME || 'nom_de_ta_base',
+      database: process.env.DB_NAME || 'artisan_db',
       multipleStatements: true // Permet d'exécuter plusieurs requêtes SQL dans un seul appel
     });
 
     // Lecture du fichier SQL
-   const sqlPath = path.join(__dirname, '..', 'database', 'init.sql');
+    const sqlPath = path.join(__dirname, '..', 'database', 'init.sql');
 
     const sql = fs.readFileSync(sqlPath, 'utf8');
 

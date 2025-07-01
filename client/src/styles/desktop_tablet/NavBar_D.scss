@@ -1,0 +1,178 @@
+@import '../mixin.scss';
+@import '../fonts.scss';
+// ✅ Ajuste la largeur du `ul` en **desktop**
+
+
+
+@media (min-width: 768px) {
+
+    .container-navbar {
+        @include bg_white();
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: end !important;
+        width: 100% !important;
+        padding: 0 !important;
+        height: 70px !important;
+    }
+
+
+    .onglet-container {
+
+        @include bg_white();
+        box-sizing: border-box !important;
+        display: flex !important;
+        justify-content: end !important;
+        padding-right: 10px !important;
+    }
+
+    .onglet-list {
+        width: 100% !important; // ✅ Fixe le `ul` de la navbar à 60% en desktop
+        height: 100% !important; // ✅ Ajuste la hauteur du `ul` de la navbar
+        display: flex !important;
+        justify-content: end !important;
+        align-items: flex-end !important;
+        flex-direction: row !important; // ✅ Affiche les onglets en ligne
+        border-bottom: none;
+    }
+
+    .container-img {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        padding: 0;
+        margin: 0;
+
+        .ImgNavBar {
+            transition: filter 0.2s ease-in-out;
+            width: 100%;
+            max-width: 250px;
+            min-width: 150px; // ✅ Limite la taille du logo
+            height: auto;
+            max-height: 70px; // ✅ Ne dépasse pas la navbar
+            object-fit: contain;
+            display: block;
+
+            &:hover {
+                filter: brightness(1.2);
+                scale: 1.1;
+            }
+        }
+    }
+
+    .navbar.shadow {
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin-bottom: 10px !important;
+    }
+
+
+    .menu-artisan,
+    .menu-standart {
+        @include bg_white();
+        max-width: 150px !important;
+        width: 25% !important;
+        box-sizing: border-box !important;
+        height: 100% !important; // ✅ Ajuste la hauteur des onglets
+
+    }
+
+
+    .standart_btn,
+    .artisan_btn {
+        @include onglet_stdr();
+        width: 25% !important;
+        min-width: 150px !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+
+        &.artisan_btn {
+            @include bg_green();
+        }
+
+        &.standart_btn.show {
+            @include bg_blue();
+
+            >p {
+
+                @include c_white();
+            }
+        }
+    }
+
+    .contact_btn {
+
+        width: 25%;
+        min-width: 150px;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+
+    .standart_btn:hover,
+    .contact_btn:hover,
+    .dropdown-item.standard-link:hover {
+        @include hover-bg_blue();
+
+        >p {
+            @include c_white();
+        }
+    }
+
+    .artisan_btn:hover,
+    .dropdown-item.artisan-link:hover {
+        @include hover-bg_green();
+
+        >p {
+            @include c_white();
+        }
+
+    }
+
+    .dropdown-menu .dropdown-item.artisan-link.active {
+        @include active-bg_green();
+
+        >p {
+            @include c_white();
+        }
+    }
+
+    .dropdown-menu .dropdown-item.standard-link.active {
+        @include active-bg_blue();
+
+        >p {
+            @include c_white();
+        }
+    }
+
+
+
+    .dropdown-menu {
+        @include bg_white();
+        min-width: 150px !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-sizing: border-box !important;
+        z-index: 9999 !important; // ✅ Place le menu au-dessus des cartes
+    }
+
+
+
+    .dropdown-item {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 40px !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+}

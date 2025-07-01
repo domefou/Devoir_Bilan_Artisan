@@ -1,56 +1,47 @@
-// ce code initialise une base de données MySQL en exécutant un script SQL
-// Ce fichier est le point d'entrée de l'application Express
-// Il configure le serveur Express, la connexion à la base de données MySQL et les routes de l'API
-// Assurez-vous d'avoir installé les dépendances nécessaires : npm install express cors mysql2 dotenv sequelize
-// il initilise un serveur en localhost sur le port 5000
-// Il utilise CORS pour permettre les requêtes cross-origin et Express pour gérer les requêtes HTTP
-
-/*const express = require('express');
-const cors = require('cors');
-const mysql = require('mysql2');
-
-require('./startup/sequelizeInit');
-
-
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'test_db'
-});
-
-app.get('/data', (req, res) => {
-  db.query('SELECT * FROM users', (err, result) => {
-    if (err) throw err;
-    res.json(result);
-  });
-});
-
-app.listen(5000, () => console.log('Serveur démarré sur le port 5000'));
-*/
-
-
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
-require('./startup/sequelizeInit'); // initialise Sequelize + synchronisation
+// initialise Sequelize + synchronisation
+
+
+
+
+const sequelize = require("./config/sequelize");
+
+
+const { Op } = require('sequelize');// Importer Sequelize et Op pour les opérateurs
+// Op est utilisé pour les opérateurs de requête (like, in, etc.)
+sequelize.Op = Op; // pour l'utiliser dans la route
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes
-const produitRoutes = require('./routes/produits');
-app.use('/api/produits', produitRoutes);
 
-app.get('/', (req, res) => {
-  res.send('Bienvenue sur l’API Artisan 🎨🔧');
+const homeRoute = require('./routes/home');
+const topArtisanRoute = require('./routes/topArtisan');
+const contentCatRoute = require('./routes/contentCat');
+const searchRoute = require('./routes/search');
+
+
+app.use('/api/categories', homeRoute);
+app.use('/api/top-artisans', topArtisanRoute);
+app.use('/api/categories', contentCatRoute);
+app.use('/api/recherche', searchRoute);
+
+
+
+
+// Servir les fichiers statiques de React (APRÈS les routes API)
+app.use(express.static(path.join(__dirname, "client/build")));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
 });
 
+
+sequelize.sync().then(() => console.log("✅ Base de données synchronisée"));
 
 // Démarrage du serveur
 const PORT = process.env.PORT || 5000;
