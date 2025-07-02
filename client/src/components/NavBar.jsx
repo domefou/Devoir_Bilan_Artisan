@@ -12,7 +12,7 @@ const NavBar = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        API.get(`api/categories`)
+        API.get(`/categories`)
             .then((res) => {
                 setCategories(res.data);
                 setLoading(false);

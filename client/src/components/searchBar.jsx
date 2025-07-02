@@ -27,7 +27,7 @@ const SearchBar = () => {
         setError(null);
 
         try {
-            const res = await API.get(`api/recherche/?nom=${query}`);
+            const res = await API.get(`/recherche/?nom=${query}`);
             console.log("✅ Résultat API :", res.data);
             setResultats(Array.isArray(res.data) ? res.data : []);
         } catch (err) {

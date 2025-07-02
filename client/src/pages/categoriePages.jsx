@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import API from '../API';
 import Card from '../components/Card';
@@ -13,7 +14,7 @@ const CategoriePage = () => {
     useEffect(() => {
         console.log("useEffect exécuté avec nom_categorie :", nom_categorie);
         if (nom_categorie) {
-            const apiUrl = `api/categories/${encodeURIComponent(nom_categorie)}`;
+            const apiUrl = `/categories/${encodeURIComponent(nom_categorie)}`;
             console.log("🔹 Requête API envoyée :", apiUrl);
 
             API.get(apiUrl)
@@ -32,6 +33,15 @@ const CategoriePage = () => {
 
     return (
         <main>
+
+            <Helmet>
+                <title>Artisans spécialisés en Fabrication | Artisanat Local</title>
+                <meta
+                    name="description"
+                    content="Explorez les artisans de fabrication : bijoutiers, couturiers, ferronniers... Trouvez un expert proche de chez vous."
+                />
+                <meta name="keywords" content="fabrication, artisan, bijoutier, couturier, ferronnier" />
+            </Helmet>
             <div className="container-fluid categorie_container mt-4">
                 <h1>Artisans de la catégorie : <strong>{nom_categorie}</strong></h1> {/* ✅ Affichage dynamique */}
 

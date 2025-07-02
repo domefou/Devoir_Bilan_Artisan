@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from 'react-helmet';
 import API from '../API';
 import Card from "../components/Card"; // ✅ Importation du composant
 
@@ -10,7 +11,7 @@ const Home = () => {
     const [topArtisans, setTopArtisans] = useState([]);
 
     useEffect(() => {
-        API.get(`api/top-artisans`)
+        API.get(`/top-artisans`)
             .then((response) => {
                 console.log("✅ Meilleurs artisans reçus :", response.data);
                 setTopArtisans(response.data);
@@ -22,6 +23,17 @@ const Home = () => {
 
     return (
         <main>
+            <Helmet>
+                <title>Accueil | Trouver un artisan près de chez vous</title>
+                <meta
+                    name="description"
+                    content="Trouvez facilement un artisan qualifié selon votre besoin : bâtiment, services, alimentation et plus encore."
+                />
+                <meta
+                    name="keywords"
+                    content="artisan, services, bâtiment, fabrication, alimentation"
+                />
+            </Helmet>
 
             <div className="body_home">
                 <h1>Comment trouver mon artisan ?</h1>
