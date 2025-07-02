@@ -18,9 +18,12 @@ const app = express();
 app.use(express.json());
 
 
-app.use(cors({
-  origin: 'https://ton-frontend.onrender.com' // remplace par l’URL Render du frontend
-}));
+const corsOptions = {
+  origin: 'https://devoir-bilan-artisan-client.onrender.com',
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 
 
 
