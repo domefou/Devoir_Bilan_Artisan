@@ -41,9 +41,8 @@ const Artisan = () => {
     return (
         <div className="fiche-artisan-page">
             <Helmet>
-                <title>{`Fiche de ${artisan.nom} | Artisan ${artisan.specialite || artisan.categorie}`}</title>
-                <meta name="description" content={description} />
-                <meta name="keywords" content={`artisan, ${artisan.specialite || artisan.categorie}, ${artisan.ville}`} />
+                <title name="fiche artisan"></title>
+                <meta name="description" content="Retrouvez tout les details de votre artisan ici" />
             </Helmet>
             <div className="fiche-artisan-card">
                 <h1 className="title_detail">{artisan.nom}</h1>
