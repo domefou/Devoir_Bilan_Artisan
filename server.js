@@ -15,8 +15,13 @@ const { Op } = require('sequelize');// Importer Sequelize et Op pour les opérat
 sequelize.Op = Op; // pour l'utiliser dans la route
 
 const app = express();
-app.use(cors());
 app.use(express.json());
+
+
+app.use(cors({
+  origin: 'https://ton-frontend.onrender.com' // remplace par l’URL Render du frontend
+}));
+
 
 
 const homeRoute = require('./routes/home');

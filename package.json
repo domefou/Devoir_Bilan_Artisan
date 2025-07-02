@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "concurrently \"nodemon server.js\" \"npm run start --prefix client\"",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
