@@ -41,7 +41,9 @@ app.get('/*', (req, res) => {
 });
 
 
-sequelize.sync().then(() => console.log("✅ Base de données synchronisée"));
+sequelize.sync({ alter: true })
+  .then(() => console.log('✅ Table artisan synchronisée avec succès'))
+  .catch(err => console.error('❌ Erreur de synchronisation :', err));
 
 // Démarrage du serveur
 const PORT = process.env.PORT || 5000;

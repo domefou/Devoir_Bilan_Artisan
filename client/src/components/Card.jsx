@@ -56,7 +56,7 @@ const Card = ({ artisans }) => {
                     </NavLink>
                 ))
             ) : (
-                <p className="text-muted text-center">Aucun artisan trouvé pour cette catégorie.</p>
+                <p className="text-muted text-center">Veuillez patienter ...</p>
             )}
         </div>
 

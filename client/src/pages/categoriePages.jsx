@@ -42,7 +42,7 @@ const CategoriePage = () => {
                 ) : artisans.length > 0 ? (
                     <Card artisans={artisans} /> // ✅ Passe les artisans récupérés à Card.jsx
                 ) : (
-                    <p>Aucun artisan trouvé pour cette catégorie.</p> // ✅ Message en cas de données vides
+                    <p>Aucun artisan trouvé pour cette catégorie</p> // ✅ Message en cas de données vides
                 )}
 
             </div>

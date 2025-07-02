@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/sequelize'); // Assure-toi d'avoir une connexion Sequelize configurée
+const sequelize = require('../config/sequelize'); // ton instance Sequelize PostgreSQL
 
 const Artisan = sequelize.define('Artisan', {
     id_artisan: {
@@ -50,21 +50,23 @@ const Artisan = sequelize.define('Artisan', {
         type: DataTypes.STRING(90),
         allowNull: false
     },
+    logo: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
     created_at: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW
     },
     updated_at: {
         type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
-        onUpdate: DataTypes.NOW
+        defaultValue: DataTypes.NOW
     }
 }, {
     tableName: 'artisan',
-    timestamps: true, // Sequelize gère automatiquement createdAt et updatedAt
+    timestamps: true,
     createdAt: 'created_at',
     updatedAt: 'updated_at'
 });
 
 module.exports = Artisan;
-// Assure-toi d'importer et de synchroniser ce modèle dans ton fichier principal (par exemple, server.js) pour qu'il soit pris en compte par Sequelize.
