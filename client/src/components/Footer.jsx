@@ -27,7 +27,7 @@ const Footer = () => {
                 </div>
                 <div className='col location'>
                     <h3>Lyon</h3>
-                    <a href="#"
+                    <a href="https://www.bing.com/maps?q=101+cours+Charlemagne+CS+20033+69269+LYON+CEDEX+02+France&FORM=HDRSC6&cp=45.740676%7E4.819365&lvl=15.7"
                         target="_blank"
                         rel="noopener noreferrer">
                         101 cours Charlemagne<br />
@@ -44,7 +44,7 @@ const Footer = () => {
                 </div>
                 <div className='col location'>
                     <h3>Clermont-ferrand</h3>
-                    <a href="#"
+                    <a href="https://www.bing.com/maps?pglt=297&q=59+boulevard+L%C3%A9on+Jouhaux+CS+90706+63050+Clermond-Ferrand+CEDEX+02+France&cvid=a1ed46ffd41a4a078015d3f4c7bb10cc&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOdIBCDExNjBqMGoxqAIIsAIB&FORM=ANNTA1&PC=ASTS"
                         target="_blank"
                         rel="noopener noreferrer">
                         59 boulevard Léon Jouhaux<br />
@@ -81,5 +81,6 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
 

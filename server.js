@@ -4,6 +4,11 @@ const path = require('path');
 require('dotenv').config();
 // initialise Sequelize + synchronisation
 
+const rateLimit = require('express-rate-limit');
+
+
+
+
 
 
 
@@ -24,6 +29,16 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limite chaque IP à 100 requêtes par fenêtre
+  standardHeaders: true, // retourne les infos de limite dans les headers
+  legacyHeaders: false, // désactive les anciens headers
+});
+
+app.use(limiter); // applique le limiteur à toutes les routes
 
 
 

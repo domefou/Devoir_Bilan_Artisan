@@ -1,4 +1,4 @@
-# 🛠️ Devoir Bilan Artisan
+# 🛠️ Devoir Bilan Artisan (BACKEND)
 
 Devoir Bilan Artisan est une application full-stack permettant d'importer, gérer et afficher des artisans locaux à partir d’un fichier CSV.  
 Elle repose sur une base de données PostgreSQL, un backend Express/Sequelize, et une interface utilisateur React.
@@ -13,6 +13,7 @@ devoir_bilan_artisan/
 ├── models/                    # Modèles Sequelize
 ├── config/                    # Configuration Sequelize & .env
 ├── scripts/importArtisans.js  # Importation CSV → PostgreSQL
+├── Database/                  # Script création DB et Table
 ├── assets/data/data.csv       # Données artisanales
 ├── client/                    # Frontend React
 └── README.md                  # Documentation
@@ -53,11 +54,22 @@ npm run dev
 
 ---
 
-## 📁 Importer le fichier CSV
+# Créer la dataBase (🔧 Utilisation de PostgreSql obligatoire pour ce script!)
 
-```bash
+- Utiliser le script CreateDb.sql situé dans le dossier Database
+
+## Créer la table (🛠️ Utilisation de PostgreSql obligatoire pour ce script!)
+
+- Utiliser le script CreateTable.sql situé dans le dossier Database
+
+### 📁 Importer le fichier CSV
+
+utiliser la commande ci-dessous pour inserer automatiquement les données artisan de data.csv
+
+```bash / powershell
 node scripts/importArtisans.js
 ```
+
 - Lecture de `assets/data/data.csv`
 - Mappage vers le modèle Artisan
 - Insertion des données via Sequelize

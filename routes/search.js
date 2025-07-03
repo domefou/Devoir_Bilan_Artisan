@@ -21,7 +21,8 @@ router.get('/', async (req, res) => {
         const resultats = await Artisan.findAll({
             where: {
                 nom: {
-                    [Op.like]: `%${nom}%` // ✅ Permet une recherche partielle
+                    [Op.iLike]: `%${nom}%` // ✅ Permet une recherche insensible à la casse (PostgreSQL)
+                    // [Op.like]: `%${nom}%` ✅ Permet une recherche partielle SQL
                 }
             },
             attributes: ['id_artisan', 'nom', 'specialite', 'note', 'ville', 'a_propos', 'email', 'web', 'categorie', 'created_at', 'updated_at'],
