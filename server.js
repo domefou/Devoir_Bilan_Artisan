@@ -55,13 +55,16 @@ app.use('/api/recherche', searchRoute);
 
 
 
+/*
+Servir les fichiers statiques de React (APRÈS les routes API)
 
-// Servir les fichiers statiques de React (APRÈS les routes API)
 app.use(express.static(path.join(__dirname, "client/build")));
 
 app.get('/*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
 });
+
+*/
 
 
 sequelize.sync({ alter: true })
